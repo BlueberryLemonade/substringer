@@ -4,8 +4,10 @@ public class Stringer {
 
         int substring = 3;
 
-
-        String test = "ABCDE";
+        String smallest = "g";
+        System.out.println(smallest);
+        String largest = "";
+        String test = "welcometojava";
 
         // "itLen" stands for Iterator Length, here to find the amount of times one has to iterate over a string
         //  to check every character.
@@ -15,11 +17,19 @@ public class Stringer {
 
         for(int i = 0; i<itLen; i++){
 
+            String sub = test.substring(i, substring+i);
 
-            subStrings[i] = test.substring(i,substring+i);
+            subStrings[i] = sub;
 
         }
 
-        System.out.println("Value at 0 is: " + subStrings[2]);
+        java.util.Arrays.sort(subStrings);
+
+        smallest = subStrings[0];
+
+        largest = subStrings[itLen-1];
+
+        System.out.println("smallest: " + smallest);
+        System.out.println("largest: " + largest);
     }
 }
